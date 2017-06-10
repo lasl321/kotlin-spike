@@ -2,7 +2,7 @@ group 'lasl321'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.1.2-2'
+    ext.kotlin_version = '1.1.2'
 
     repositories {
         mavenCentral()
@@ -30,9 +30,10 @@ repositories {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.2-2"
-    testCompile "org.jetbrains.kotlin:kotlin-test-junit:1.1.2-2"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    testCompile "org.jetbrains.spek:spek-api:$kotlin_version"
+    testRuntime "org.jetbrains.spek:spek-junit-platform-engine:$kotlin_version"
     testCompile "org.junit.platform:junit-platform-runner:1.0.0-M4"
-    testCompile 'org.jetbrains.spek:spek-api:1.1.2'
-    testRuntime 'org.jetbrains.spek:spek-junit-platform-engine:1.1.2'
 }
